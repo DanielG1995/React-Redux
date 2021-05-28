@@ -1,5 +1,5 @@
 import { types } from "../types/types"
-import { db, firebase } from '../firebase/firebase'
+import { db } from '../firebase/firebase'
 
 
 
@@ -14,12 +14,11 @@ export const notesAdd = ({ noteId }) => {
 
 
 export const startNewNote = () => {
-    return async (dispatch, getState) => {
+    return async(dispatch, getState) => {
         const uid = getState().auth.uid;
-        console.log(uid);
         const note = {
-            title: '',
-            body: '',
+            title: 'Este es un titulo',
+            body: 'Body ::::S',
             date: new Date().getTime()
         }
 
@@ -36,4 +35,9 @@ export const activeNote = (id, note) => ({
     }
 })
 
-
+export const setNotes = (notes) => ({
+    type: types.notesLoad,
+    payload: {
+        notes: [...notes]
+    }
+})

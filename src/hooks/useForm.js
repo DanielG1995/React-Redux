@@ -5,14 +5,14 @@ export const useForm = (initialState = {}) => {
 
     const [values, setValues] = useState(initialState);
 
-    const reset = () => {
-        setValues(initialState);
+    const reset = (newState = initialState) => {
+        setValues(newState);
     }
 
 
     const handleInputChange = ({ target }) => {
 
-        //Manejo de variables con los nombres de los compoenntes
+        //Manejo de variables con los nombres de los componentes
         setValues({
             ...values,
             [target.name]: target.value
