@@ -15,7 +15,7 @@ export const types = {
     notesSelect: 'notesSelect',
     notesAdd: 'notesAdd',
     notesLoad: 'notesLoad',
-    notesUpdate: 'unotesUpdate',
+    notesUpdate: 'notesUpdate',
     notesDelete: 'notesDelete',
     notesFileUrl: 'updateImage',
     notesLogoutClean: 'notesLogoutClean'

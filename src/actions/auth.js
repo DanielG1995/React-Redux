@@ -4,12 +4,14 @@ import { firebase, googleAuth } from '../firebase/firebase'
 import Swal from 'sweetalert2'
 
 import { removeError, setError } from "./ui"
+import { cleanNotes } from "./notes"
 
 
 export const startLogout = () => {
     return (async (dispatch) => {
         await firebase.auth().signOut();
         dispatch(logout());
+        dispatch(cleanNotes());
 
     })
 }
